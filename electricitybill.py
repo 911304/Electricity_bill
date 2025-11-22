@@ -7,4 +7,6 @@ if len(sys.argv) != 2:
 units = float(sys.argv[1])
 bill = units * 5
 
-print("Electricity Bill: ₹", bill)
+# Encode output to UTF-8 and write directly to stdout
+output = f"Electricity Bill: ₹ {bill}"
+sys.stdout.buffer.write((output + "\n").encode('utf-8'))
